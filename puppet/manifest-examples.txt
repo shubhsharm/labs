@@ -196,11 +196,11 @@ mymodule/
 	tests/        ## smoke tests / example usage
 	spec/         ## automated tests
 
-puppet module genereate naresh-tomcat
+puppet module genereate shubh-tomcat
 mkdir tomcat/{fies, templates}
 
 /opt/puppetlabs/bin/puppet generate module <author-modulename>
-/opt/puppetlabs/bin/puppet generate module naresh-tomcat
+/opt/puppetlabs/bin/puppet generate module shubh-tomcat
 
 cd tomcat/manifests
 
