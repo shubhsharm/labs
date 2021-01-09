@@ -206,7 +206,7 @@ cd tomcat/manifests
 
 vi setup_user.pp
 
-calss tomcat::setup_user {
+class tomcat::setup_user {
 
 	group { 'tomcat':
 		name => 'tomcat',
