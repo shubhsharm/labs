@@ -84,12 +84,11 @@
 ```
 install all these from Jenkins UI )
   Manage Jenkins --> manage plugins -- Available -- search & install the below
-  	1) PMD
-  	2) cobertura
-  	3) Junit
-  	4) build with parameters
-  	5) BuildPipeline
-	6) Parameterised Trigger Remote builds
+  	1) cobertura
+  	2) Junit
+  	3) build with parameters
+  	4) BuildPipeline
+	5) Parameterised Trigger Remote builds
 ```
 
 ### Step11 -- `Create Credentials (Setup these from Jenkins UI)`
@@ -139,21 +138,7 @@ insdie job parameters as below
 Apply & Save
 ```
 
-### `JOB2 -- code review`
-```
-Jenkins ( home page ) ==> New Item ==> job2-codereview ==> Freestyle project ==> ok
-insdie job parameters as below 
-
-	Source Code Management --> Git --> Repository URL (https://github.com/lerndevops/samplejavaapp)
-	Build Triggers --> Build after other projects are built --> Projects to watch (job1-compile)
-	Build --> (click on drop down) Invoke top-level Maven targets
-		Maven Version --> select value from drop down (ex: maven3.6) as configured in Step12
-		Goals: -P metrics pmd:pmd
-	Post-build Actions --> [Depricated] Publish PMD analysis results --> PMD results (**/pmd.xml)
-Apply & Save
-```
-
-### `JOB3 -- UnitTest`
+### `JOB2 -- UnitTest`
 ```
 Jenkins ( home page ) ==> New Item ==> job3-unittest ==> Freestyle project ==> ok
 insdie job parameters as below 
@@ -167,7 +152,7 @@ insdie job parameters as below
 Apply & Save
 ```
 
-### `JOB4 -- package`
+### `JOB3 -- package`
 ```
 Jenkins ( home page ) ==> New Item ==> job4-package ==> Freestyle project ==> ok
 insdie job parameters as below 
@@ -199,7 +184,7 @@ Apply & Save
 After running this JOB validate the Image is Uploaded to Docker Hub Sucessfully 
 ```
 
-### `JOB5 -- Deploy to QA`
+### `JOB4 -- Deploy to QA`
 ```
 Jenkins ( home page ) ==> New Item ==> job5-deploy.qa ==> Freestyle project ==> ok
 insdie job parameters as below 
@@ -220,7 +205,7 @@ insdie job parameters as below
 
 ```
 
-### `JOB6 -- Run Automation Tests`
+### `JOB5 -- Run Automation Tests`
 ```
 Jenkins ( home page ) ==> New Item ==> job6--Selenium.test ==> Freestyle project ==> ok
 insdie job parameters as below 
@@ -240,7 +225,7 @@ insdie job parameters as below
 
 ```
 
-### `JOB7 -- Deploy to PROD`
+### `JOB6 -- Deploy to PROD`
 ```
 Jenkins ( home page ) ==> New Item ==> job7-deploy.prod ==> Freestyle project ==> ok
 insdie job parameters as below 
@@ -257,7 +242,7 @@ insdie job parameters as below
 
 ```
 
-### Step14 -- `Configure Build Pipeline View`
+### Step7 -- `Configure Build Pipeline View`
 
 ```
 Jenkins ( home page ) ==> My Views ==> New View ==> View Name Enter "CICD-View" ==> Select "Build Pipeline View" ==> Click "Ok"
